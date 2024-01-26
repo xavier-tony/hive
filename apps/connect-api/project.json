@@ -1,0 +1,53 @@
+{
+  "name": "connect-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/connect-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/connect-api",
+        "main": "apps/connect-api/src/main.ts",
+        "tsConfig": "apps/connect-api/tsconfig.app.json",
+        "assets": ["apps/connect-api/src/assets"],
+        "webpackConfig": "apps/connect-api/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "connect-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "connect-api:build:development"
+        },
+        "production": {
+          "buildTarget": "connect-api:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/connect-api/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

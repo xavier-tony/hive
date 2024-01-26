@@ -1,0 +1,31 @@
+:host {
+  font-family: monospace;
+  font-size: 1rem;
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+  height: 100vh;
+
+  .dropdown-menu {
+  position: absolute;
+  z-index: 10;
+  /* Style your dropdown */
+}
+
+  ngx-codemirror {
+    flex: 1;
+    display: block;
+    border: 1px solid #eee;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .viewer {
+    flex: 1;
+    margin: 1rem 0;
+    display: block;
+    border: 1px solid #eee;
+    border-radius: 0.5rem;
+    min-height: 300px;
+  }
+}
