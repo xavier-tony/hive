@@ -15,8 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hive/editor": ["libs/editor/src/index.ts"]
-    },
+      "@hive/api/feature-flag": ["libs/api/feature-flag/src/index.ts"],
+      "@hive/api/shared": ["libs/api/shared/src/index.ts"],
+      "@hive/editor": ["libs/editor/src/index.ts"],
+      "@hive/feature-manager": ["libs/feature-manager/src/index.ts"],
+      "@hive/services": ["libs/services/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
